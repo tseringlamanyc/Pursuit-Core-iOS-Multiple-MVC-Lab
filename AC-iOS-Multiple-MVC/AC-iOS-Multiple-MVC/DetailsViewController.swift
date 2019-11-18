@@ -10,15 +10,16 @@ import UIKit
 
 class DetailsViewController: UIViewController {
     
-    
     @IBOutlet weak var imageView: UIImageView!
     @IBOutlet weak var textLabel: UILabel!
-    
-    var 
+        
+    var data: ZooAnimal!
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        imageView.image = UIImage(named: String(data.imageNumber))
+        textLabel.text = data.info
+        title = data.name
     }
   
 
