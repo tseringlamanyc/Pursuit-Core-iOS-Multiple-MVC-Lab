@@ -19,7 +19,6 @@ class DetailsViewController: UIViewController {
         super.viewDidLoad()
         imageView.image = UIImage(named: String(data.imageNumber))
         textLabel.text = data.info
-        title = data.name
     }
   
 

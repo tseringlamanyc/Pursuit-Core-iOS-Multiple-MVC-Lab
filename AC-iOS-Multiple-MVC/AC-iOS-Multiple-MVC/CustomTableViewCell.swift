@@ -18,5 +18,6 @@ class CustomTableViewCell: UITableViewCell {
         animalPhoto.image = UIImage(named: String(animal.imageNumber))
         nameLabel.text = animal.name
         continentLabel.text = animal.origin
+       
        }
 }

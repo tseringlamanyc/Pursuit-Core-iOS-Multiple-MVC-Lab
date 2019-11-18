@@ -13,11 +13,6 @@ class ViewController: UIViewController {
     
     @IBOutlet weak var tableView: UITableView!
     
-//    private var animals = ZooAnimal.zooAnimals {
-//        didSet {
-//            tableView.reloadData()
-//        }
-//    }
     
     var data = [[ZooAnimal]]() {
         didSet {
@@ -37,28 +32,27 @@ class ViewController: UIViewController {
         guard let vc = segue.destination as? DetailsViewController, let indexpath = tableView.indexPathForSelectedRow else {
             return
         }
-        vc.data = data[indexpath.row][indexpath.section]
+        vc.data = data[indexpath.section][indexpath.row]
     }
 }
 
-extension ViewController: UITableViewDataSource, UITableViewDelegate {
+extension ViewController: UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return data[section].count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "animalCell", for: indexPath)
+        guard let cell = tableView.dequeueReusableCell(withIdentifier: "animalCell", for: indexPath) as? CustomTableViewCell else {
+            fatalError("CustomTableViewCell not found")
+        }
         let animal = data[indexPath.section][indexPath.row]
-        cell.textLabel?.text = animal.name
-        cell.detailTextLabel?.text = animal.origin
-        cell.imageView?.image = UIImage(named: String(animal.imageNumber))
+        cell.configureCell(animal: animal)
+
         return cell
     }
     
-    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        return 120
-    }
+    
     
     func numberOfSections(in tableView: UITableView) -> Int {
         return data.count
@@ -69,3 +63,9 @@ extension ViewController: UITableViewDataSource, UITableViewDelegate {
     }
 }
 
+
+extension ViewController: UITableViewDelegate {
+    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        return 158
+    }
+}
