@@ -128,32 +128,26 @@ Zebras were the second species to diverge from the earliest proto-horses, after 
 """)
     ]
     
-     static func getSections() -> [[ZooAnimal]] {
-      // < means ascending, e.g a....z
-      // > meand descending, e.g z.....a
+    static func getSections() -> [[ZooAnimal]] {
         let sorted = ZooAnimal.zooAnimals.sorted { $0.classification < $1.classification }
-      
-      // creates unique continent titles
         let sortedTiles: Set<String> = Set(ZooAnimal.zooAnimals.map { $0.classification })
-      
-      var sectionsArr = Array(repeating: [ZooAnimal](), count: sortedTiles.count)
-      // created 5 empty arrays of type [Country]
-      // [[],[],[],[],[]]
-      
-      // iterate through our countries array and add to the relevant section
-      var currentIndex = 0
-      var currentAnimals = sorted.first?.classification ?? "Pursuit" // e.g Asia
-      for animal in sorted {
-        if animal.classification == currentAnimals {
-          // add to current section
-          sectionsArr[currentIndex].append(animal)
-        } else {
-          currentIndex += 1
-            currentAnimals = animal.classification
-          sectionsArr[currentIndex].append(animal)
+        
+        var sectionsArr = Array(repeating: [ZooAnimal](), count: sortedTiles.count)
+        // [[],[],[],[],[]]
+        
+        // iterate through our countries array and add to the relevant section
+        var currentIndex = 0
+        var currentAnimals = sorted.first?.classification ?? "Pursuit"
+        for animal in sorted {
+            if animal.classification == currentAnimals {
+                sectionsArr[currentIndex].append(animal)
+            } else {
+                currentIndex += 1
+                currentAnimals = animal.classification
+                sectionsArr[currentIndex].append(animal)
+            }
         }
-      }
-      return sectionsArr
+        return sectionsArr
     }
 }
 

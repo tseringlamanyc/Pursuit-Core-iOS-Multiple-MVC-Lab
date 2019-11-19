@@ -19,7 +19,7 @@ class ViewController: UIViewController {
             tableView.reloadData()
         }
     }
-
+    
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -48,10 +48,8 @@ extension ViewController: UITableViewDataSource {
         }
         let animal = data[indexPath.section][indexPath.row]
         cell.configureCell(animal: animal)
-
         return cell
     }
-    
     
     
     func numberOfSections(in tableView: UITableView) -> Int {
@@ -66,6 +64,6 @@ extension ViewController: UITableViewDataSource {
 
 extension ViewController: UITableViewDelegate {
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        return 158
+        return 100
     }
 }
