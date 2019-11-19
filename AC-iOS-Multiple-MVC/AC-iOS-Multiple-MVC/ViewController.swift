@@ -14,12 +14,11 @@ class ViewController: UIViewController {
     @IBOutlet weak var tableView: UITableView!
     
     
-    var data = [[ZooAnimal]]() {
+    private var data = [[ZooAnimal]]() {
         didSet {
             tableView.reloadData()
         }
     }
-    
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -64,6 +63,6 @@ extension ViewController: UITableViewDataSource {
 
 extension ViewController: UITableViewDelegate {
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        return 100
+        return 75
     }
 }

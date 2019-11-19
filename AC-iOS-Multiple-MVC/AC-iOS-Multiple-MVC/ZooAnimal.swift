@@ -137,13 +137,13 @@ Zebras were the second species to diverge from the earliest proto-horses, after 
         
         // iterate through our countries array and add to the relevant section
         var currentIndex = 0
-        var currentAnimals = sorted.first?.classification ?? "Pursuit"
+        var currentClassification = sorted.first?.classification ?? "Pursuit"
         for animal in sorted {
-            if animal.classification == currentAnimals {
+            if animal.classification == currentClassification {
                 sectionsArr[currentIndex].append(animal)
             } else {
                 currentIndex += 1
-                currentAnimals = animal.classification
+                currentClassification = animal.classification
                 sectionsArr[currentIndex].append(animal)
             }
         }

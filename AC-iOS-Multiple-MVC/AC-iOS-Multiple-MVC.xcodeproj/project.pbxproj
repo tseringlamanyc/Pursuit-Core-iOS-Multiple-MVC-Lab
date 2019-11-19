@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		5207C72423844F1500A50E28 /* BasicViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5207C72323844F1500A50E28 /* BasicViewController.swift */; };
 		522AF56F23833C9400086C45 /* DetailsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 522AF56E23833C9400086C45 /* DetailsViewController.swift */; };
 		5289B3C723834D260085974A /* CustomTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5289B3C623834D260085974A /* CustomTableViewCell.swift */; };
 		DE07F55F1FAB611300DA3ABA /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE07F55E1FAB611300DA3ABA /* AppDelegate.swift */; };
@@ -18,6 +19,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		5207C72323844F1500A50E28 /* BasicViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BasicViewController.swift; sourceTree = "<group>"; };
 		522AF56E23833C9400086C45 /* DetailsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailsViewController.swift; sourceTree = "<group>"; };
 		5289B3C623834D260085974A /* CustomTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomTableViewCell.swift; sourceTree = "<group>"; };
 		DE07F55B1FAB611300DA3ABA /* AC-iOS-Multiple-MVC.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "AC-iOS-Multiple-MVC.app"; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -63,6 +65,7 @@
 				DE07F5701FAB627600DA3ABA /* ZooAnimal.swift */,
 				DE07F5601FAB611300DA3ABA /* ViewController.swift */,
 				DE07F5621FAB611300DA3ABA /* Main.storyboard */,
+				5207C72323844F1500A50E28 /* BasicViewController.swift */,
 				5289B3C623834D260085974A /* CustomTableViewCell.swift */,
 				522AF56E23833C9400086C45 /* DetailsViewController.swift */,
 				DE07F55E1FAB611300DA3ABA /* AppDelegate.swift */,
@@ -146,6 +149,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				DE07F5611FAB611300DA3ABA /* ViewController.swift in Sources */,
+				5207C72423844F1500A50E28 /* BasicViewController.swift in Sources */,
 				5289B3C723834D260085974A /* CustomTableViewCell.swift in Sources */,
 				DE07F5711FAB627600DA3ABA /* ZooAnimal.swift in Sources */,
 				DE07F55F1FAB611300DA3ABA /* AppDelegate.swift in Sources */,
